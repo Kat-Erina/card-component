@@ -43,7 +43,7 @@ export const ImageSection = styled.section`
   }
 `;
 
-export const Image = styled.img`
+export const ImageElement = styled.img`
   display: block;
   width: 100%;
   height: 100%;
@@ -59,7 +59,7 @@ export const OverlayComponent = styled.div`
   opacity: 0.6;
 `;
 
-export const Section = styled.section`
+export const StyledSection = styled.section`
   padding: 3.2rem 2rem;
   height: 100%;
 

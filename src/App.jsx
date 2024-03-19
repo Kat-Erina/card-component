@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import mobileImage from "./assets/image-header-mobile.jpg";
-import desktopImage from "./assets/image-header-desktop.jpg";
 
 const GlobalStyles = createGlobalStyle`
 * {padding:0;
@@ -47,7 +46,7 @@ function App() {
               </LiElement>
               <LiElement>
                 <PInSList>12M+</PInSList>
-                <SpanInList>quesries</SpanInList>
+                <SpanInList>queries</SpanInList>
               </LiElement>
             </ListSection>
           </Section>
@@ -60,43 +59,46 @@ function App() {
 export default App;
 
 const MainStyle = styled.main`
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  padding: 88px 24px;
+  padding: 6rem 0;
   background-color: #0a0c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 1400px) {
+    padding: 177px 150px;
+  }
 `;
 
 const SectionStyledComponent = styled.section`
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 80%;
   background-color: #1b1937;
   border-radius: 0.5rem;
   box-shadow: 0px 20px 20px -10px rgba(23, 25, 41, 0.2);
+  @media screen and (min-width: 950px) {
+    width: 75%;
+  }
+  @media screen and (min-width: 1000px) {
+    flex-direction: row-reverse;
+    width: 80%;
+  }
 `;
 
 const ImageSection = styled.section`
-  height: 50%;
+  height: 16rem;
   width: 100%;
   position: relative;
-  /* background-image: url(${mobileImage});
-  background-size: auto;
-  background-repeat: no-repeat;
-  /* background-position: center; */
-  /* &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #653285;
-    opacity: 0.65;
-    z-index: 1;
-  } */
-  /* @media screen and (min-width: 800px) {
-    background-image: url(${desktopImage});
-  }  */
+  @media screen and (min-width: 500px) {
+    height: 350px;
+  }
+  @media screen and (min-width: 1000px) {
+    height: auto;
+    flex: 1;
+  }
 `;
 
 const Image = styled.img`
@@ -122,6 +124,14 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  @media screen and (min-width: 1000px) {
+  }
+  @media screen and (min-width: 1400px) {
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Header = styled.h1`
@@ -129,11 +139,24 @@ const Header = styled.h1`
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px;
-
+  line-height: 2rem;
   text-align: center;
   padding: 10px;
   margin-bottom: 1rem;
+  @media screen and (min-width: 750px) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 36px;
+    line-height: 2rem;
+    text-align: start;
+    padding-left: 0;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 26rem;
+    line-height: 44px;
+  }
 `;
 
 const Span = styled.span`
@@ -143,7 +166,6 @@ const Span = styled.span`
 const PStyled = styled.p`
   display: flex;
   color: #fff;
-
   text-align: center;
   font-family: Inter;
   font-size: 15px;
@@ -153,16 +175,40 @@ const PStyled = styled.p`
   margin-bottom: 40px;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  @media screen and (min-width: 750px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: start;
+    margin-bottom: 4rem;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 26rem;
+    float: left;
+    line-height: 25px;
+    margin-bottom: 70px;
+  }
 `;
 
 const ListSection = styled.ul`
-  background-color: white;
   padding: 3.2rem, 2rem;
   text-align: center;
+  @media screen and (min-width: 1000px) {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    width: 100%;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 26rem;
+  }
 `;
 
 const LiElement = styled.li`
-  margin-bottom: 24px;
+  padding-bottom: 24px;
   list-style: none;
 `;
 
@@ -171,6 +217,14 @@ const PInSList = styled.p`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  color: white;
+  @media screen and (min-width: 750px) {
+    font-size: 2rem;
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 1.5rem;
+    text-align: start;
+  }
 `;
 const SpanInList = styled.span`
   text-align: center;
@@ -181,4 +235,8 @@ const SpanInList = styled.span`
   line-height: 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: white;
+  @media screen and (min-width: 1000px) {
+    font-size: 12px;
+  }
 `;
